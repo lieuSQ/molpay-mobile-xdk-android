@@ -97,6 +97,6 @@ Merchant Technical Support / Customer Care : support@molpay.com<br>
 Sales/Reseller Enquiry : sales@molpay.com<br>
 Marketing Campaign : marketing@molpay.com<br>
 Channel/Partner Enquiry : channel@molpay.com<br>
-Media Contact : media@molpay.com
-R&D and Tech-related Suggestion : technical@molpay.com
+Media Contact : media@molpay.com<br>
+R&D and Tech-related Suggestion : technical@molpay.com<br>
 Abuse Reporting : abuse@molpay.com
