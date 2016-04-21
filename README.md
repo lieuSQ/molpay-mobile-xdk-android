@@ -17,7 +17,7 @@ This is the complete and functional MOLPay Android payment module that is ready 
 
 ## Installation
 
-    Step 1 - Add compile 'com.molpay:molpay-mobile-xdk-android:1.0.0' to dependencies in application build.gradle
+    Step 1 - Add compile 'com.molpay:molpay-mobile-xdk-android:1.0.2' to dependencies in application build.gradle
 
     Step 2 - Add import com.molpay.molpayxdk.MOLPayActivity;
 
