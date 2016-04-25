@@ -11,9 +11,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
 
 - __Minimum Android SDK Version__: 22 ++
 
-- __Minimum Android API level__: 14 ++
+- __Minimum Android API level__: 19 ++
 
-- __Minimum Android target version__: Android 4.0
+- __Minimum Android target version__: Android 4.4
 
 ## Installation
 
