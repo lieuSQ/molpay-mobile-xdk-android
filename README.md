@@ -9,63 +9,59 @@ This is the complete and functional MOLPay Android payment module that is ready 
 
 ## Recommended configurations
 
-- __Minimum Android SDK Version__: 22 ++
+    - Minimum Android SDK Version: 23 ++
 
-- __Minimum Android API level__: 19 ++
+    - Minimum Android API level: 16 ++
 
-- __Minimum Android target version__: Android 4.4
+    - Minimum Android target version: Android 4.1
 
 ## Installation
 
-    Step 1 - Add compile 'com.molpay:molpay-mobile-xdk-android:1.0.3' to dependencies in application build.gradle
+    Step 1 - Add compile 'com.molpay:molpay-mobile-xdk-android:1.0.4' to dependencies in application build.gradle
 
     Step 2 - Add import com.molpay.molpayxdk.MOLPayActivity;
 
-    Step 3 - Override protected void onActivityResult(int requestCode, int resultCode, Intent data) to get return results when the payment activity ended
+    Step 3 - Add the result callback function to get return results when the payment activity ended,
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == MOLPayActivity.MOLPayXDK && resultCode == RESULT_OK){
+            Log.d(MOLPayActivity.MOLPAY, "MOLPay result = "+data.getStringExtra(MOLPayActivity.MOLPayTransactionResult));
+        }
+    }
 
 ## Prepare the Payment detail object
 
-    - Instantiate a new HashMap<String, Object> object and add the required pair key/value(s) listed below to form the payment detail object to be passed to the MOLPayActivity intent MOLPayPaymentDetails variable
-
-    - `mp_amount`: Mandatory _(String)_ value not less than `1.00`
-
-    - `mp_username`: Mandatory _(String)_. Please obtain this from MOLPay support if you're not a registered MOLPay merchant.
-
-    - `mp_password`: Mandatory _(String)_. Please obtain this from MOLPay support if you're not a registered MOLPay merchant.
-
-    - `mp_merchant_ID`: Mandatory _(String)_. Please obtain this from MOLPay support if you're not a registered MOLPay merchant.
-
-    - `mp_app_name`: Mandatory _(String)_. Please obtain this from MOLPay support if you're not a registered MOLPay merchant.
-
-    - `mp_order_ID`: Mandatory _(String)_
-
-    - `mp_currency`: Mandatory _(String)_. Malaysia currency is `MYR`.
-
-    - `mp_country`: Mandatory _(String)_. Malaysia is `MY`.
-
-    - `mp_verification_key`: Mandatory _(String)_. Please obtain this from MOLPay support if you're not a registered MOLPay merchant.
-
-    - `mp_channel`: Optional _(String)_. Defaulted to `multi` if no value provided thus all subscribed channels will be selectable.
-
-    - `mp_bill_description`: Optional _(String)_. `mp_editing_enabled` will be defaulted to 1 if no value provided thus this field
-                                                      be editable.
-
-    - `mp_bill_name`: Optional _(String)_. Same as above.
-
-    - `mp_bill_email`: Optional _(String)_. Same as above.
-
-    - `mp_bill_mobile`: Optional _(String)_. Same as above.
-
-    - `mp_channel_editing`: Optional _(int)_. Defaulted to `0` except when `mp_channel` value is `multi` if no value provided thus
-                                                  the channel cannot be changed.
-
-    - `mp_editing_enabled`: Optional _(int)_. Defaulted to `0` except any bill information not provided.
-
-    - `mp_transaction_id`: Optional _(String)_. This is MOLPay returned value, set this value to show the `Cash Channel Payment Instruction`
-                                                    or during a transaction request process.
-
-    - `mp_request_type`: Optional _(String)_. Set this value as the callback reference id when executing a transaction request. `Receipt` is
-                                                  the MOLPay reserved keyword, refrain from using it here.
+    HashMap<String, Object> paymentDetails = new HashMap<>();
+        
+        // Mandatory String. A value not less than '1.00'
+        paymentDetails.put(MOLPayActivity.mp_amount, "1.10"); 
+        
+        // Mandatory String. Values obtained from MOLPay
+        paymentDetails.put(MOLPayActivity.mp_username, "username");
+        paymentDetails.put(MOLPayActivity.mp_password, "password");
+        paymentDetails.put(MOLPayActivity.mp_merchant_ID, "merchantid");
+        paymentDetails.put(MOLPayActivity.mp_app_name, "appname");
+        paymentDetails.put(MOLPayActivity.mp_verification_key, "vkey123");
+    
+        // Mandatory String. Payment values
+        paymentDetails.put(MOLPayActivity.mp_order_ID, "orderid123");
+        paymentDetails.put(MOLPayActivity.mp_currency, "MYR");
+        paymentDetails.put(MOLPayActivity.mp_country, "MY");
+        
+        // Optional String.
+        paymentDetails.put(MOLPayActivity.mp_channel, "multi");
+        paymentDetails.put(MOLPayActivity.mp_bill_description, "billdesc");
+        paymentDetails.put(MOLPayActivity.mp_bill_name, "billname");
+        paymentDetails.put(MOLPayActivity.mp_bill_email, "email@domain.com");
+        paymentDetails.put(MOLPayActivity.mp_bill_mobile, "+1234567");
+        paymentDetails.put(MOLPayActivity.mp_channel_editing, false);
+        paymentDetails.put(MOLPayActivity.mp_editing_enabled, false);
+    
+        // For transaction request use only, do not use this on payment process
+        paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
+        paymentDetails.put(MOLPayActivity.mp_request_type, "");
 
 ## Start the payment module
 
