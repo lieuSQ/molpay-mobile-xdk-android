@@ -94,6 +94,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
         paymentDetails.put(MOLPayActivity.mp_channel_editing, false);
         paymentDetails.put(MOLPayActivity.mp_editing_enabled, false);
     
+        // Optional for Escrow
+        paymentDetails.put(MOLPayActivity.mp_is_escrow, ""); // Put "1" to enable escrow
+    
         // For transaction request use only, do not use this on payment process
         paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
         paymentDetails.put(MOLPayActivity.mp_request_type, "");
