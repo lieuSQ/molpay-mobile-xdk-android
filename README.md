@@ -10,9 +10,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
 ## Recommended configurations
 
     - Minimum Android SDK Version: 23 ++
-
+    
     - Minimum Android API level: 16 ++
-
+    
     - Minimum Android target version: Android 4.1
 
 ## MOLPay Android Caveats
@@ -22,9 +22,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
 ## Installation
 
     Step 1 - Add compile 'com.molpay:molpay-mobile-xdk-android:<put latest release version here>' to dependencies in application build.gradle
-
+    
     Step 2 - Add import com.molpay.molpayxdk.MOLPayActivity;
-
+    
     Step 3 - Add the result callback function to get return results when the payment activity ended,
     
     @Override
@@ -96,6 +96,11 @@ This is the complete and functional MOLPay Android payment module that is ready 
     
         // Optional for Escrow
         paymentDetails.put(MOLPayActivity.mp_is_escrow, ""); // Put "1" to enable escrow
+        
+        // Optional for credit card BIN restrictions
+        String binlock[] = {"414170","414171"};
+        paymentDetails.put(MOLPayActivity.mp_bin_lock, binlock);
+        paymentDetails.put(MOLPayActivity.mp_bin_lock_err_msg, "Only UOB allowed");
     
         // For transaction request use only, do not use this on payment process
         paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
@@ -105,14 +110,26 @@ This is the complete and functional MOLPay Android payment module that is ready 
 
     startActivityForResult(intent, MOLPayActivity.MOLPayXDK);
 
-## Transaction request service (optional)
+## Cash channel payment process (How does it work?)
+
+    This is how the cash channels work on XDK:
+    
+    1) The user initiate a cash payment, upon completed, the XDK will pause at the “Payment instruction” screen, the results would return a pending status.
+    
+    2) The user can then click on “Close” to exit the MOLPay XDK aka the payment screen.
+    
+    3) When later in time, the user would arrive at say 7-Eleven to make the payment, the host app then can call the XDK again to display the “Payment Instruction” again, then it has to pass in all the payment details like it will for the standard payment process, only this time, the host app will have to also pass in an extra value in the payment details, it’s the “mp_transaction_id”, the value has to be the same transaction returned in the results from the XDK earlier during the completion of the transaction. If the transaction id provided is accurate, the XDK will instead show the “Payment Instruction" in place of the standard payment screen.
+    
+    4) After the user done the paying at the 7-Eleven counter, they can close and exit MOLPay XDK by clicking the “Close” button again.
+
+## Transaction request service (Optional, NOT required for payment process)
 
     Step 1 - import com.molpay.molpayxdk.MOLPayService
-
+    
     Step 2 - Prepare the Payment detail object
-
+    
     Step 3 - MOLPayService mpservice = new MOLPayService();
-
+    
     Step 4 - 
     mpservice.transactionRequest(paymentDetails, new MOLPayService.Callback() {
             @Override

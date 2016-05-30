@@ -57,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         paymentDetails.put(MOLPayActivity.mp_editing_enabled, false);
         paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
         paymentDetails.put(MOLPayActivity.mp_request_type, "");
+        //String binlock[] = {"123456","234567"};
+        //paymentDetails.put(MOLPayActivity.mp_bin_lock, binlock);
+        //paymentDetails.put(MOLPayActivity.mp_bin_lock_err_msg, "Wrong BIN format");
         //paymentDetails.put(MOLPayActivity.mp_is_escrow, "");
         //paymentDetails.put(MOLPayActivity.mp_filter, "1");
         //paymentDetails.put(MOLPayActivity.mp_custom_css_url, "file:///android_asset/custom.css");
