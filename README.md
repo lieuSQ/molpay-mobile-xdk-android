@@ -86,13 +86,13 @@ This is the complete and functional MOLPay Android payment module that is ready 
         paymentDetails.put(MOLPayActivity.mp_country, "MY");
         
         // Optional String.
-        paymentDetails.put(MOLPayActivity.mp_channel, "multi");
+        paymentDetails.put(MOLPayActivity.mp_channel, "multi"); // Use 'multi' for all available channels option. For individual channel seletion, please refer to "Channel Parameter" in "Channel Lists" in the MOLPay API Spec for Merchant pdf. 
         paymentDetails.put(MOLPayActivity.mp_bill_description, "billdesc");
         paymentDetails.put(MOLPayActivity.mp_bill_name, "billname");
         paymentDetails.put(MOLPayActivity.mp_bill_email, "email@domain.com");
         paymentDetails.put(MOLPayActivity.mp_bill_mobile, "+1234567");
-        paymentDetails.put(MOLPayActivity.mp_channel_editing, false);
-        paymentDetails.put(MOLPayActivity.mp_editing_enabled, false);
+        paymentDetails.put(MOLPayActivity.mp_channel_editing, false); // Option to allow channel selection.
+        paymentDetails.put(MOLPayActivity.mp_editing_enabled, false); // Option to allow billing information editing.
     
         // Optional for Escrow
         paymentDetails.put(MOLPayActivity.mp_is_escrow, ""); // Put "1" to enable escrow
@@ -103,7 +103,7 @@ This is the complete and functional MOLPay Android payment module that is ready 
         paymentDetails.put(MOLPayActivity.mp_bin_lock_err_msg, "Only UOB allowed");
     
         // For transaction request use only, do not use this on payment process
-        paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
+        paymentDetails.put(MOLPayActivity.mp_transaction_id, ""); // Optional, provide a valid cash channel transaction id here will display a payment instruction screen.
         paymentDetails.put(MOLPayActivity.mp_request_type, "");
 
 ## Start the payment module
