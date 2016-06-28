@@ -122,26 +122,6 @@ This is the complete and functional MOLPay Android payment module that is ready 
     
     4) After the user done the paying at the 7-Eleven counter, they can close and exit MOLPay XDK by clicking the “Close” button again.
 
-## Transaction request service (Optional, NOT required for payment process)
-
-    Step 1 - import com.molpay.molpayxdk.MOLPayService
-    
-    Step 2 - Prepare the Payment detail object
-    
-    Step 3 - MOLPayService mpservice = new MOLPayService();
-    
-    Step 4 - 
-    mpservice.transactionRequest(paymentDetails, new MOLPayService.Callback() {
-            @Override
-            public void onTransactionRequestCompleted(String result) {
-                // result return in json;
-            }
-            @Override
-            public void onTransactionRequestFailed(String error) {
-                // error return in json;
-            }
-        });
-
 ## Support
 
 Submit issue to this repository or email to our support@molpay.com
