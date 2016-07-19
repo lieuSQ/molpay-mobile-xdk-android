@@ -105,6 +105,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
         // For transaction request use only, do not use this on payment process
         paymentDetails.put(MOLPayActivity.mp_transaction_id, ""); // Optional, provide a valid cash channel transaction id here will display a payment instruction screen.
         paymentDetails.put(MOLPayActivity.mp_request_type, "");
+    
+        // Optional, set the token id to nominate a preferred token as the default selection
+        paymentDetails.put(MOLPayActivity.mp_preferred_token, "");
 
 ## Start the payment module
 
