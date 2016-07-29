@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         //paymentDetails.put(MOLPayActivity.mp_filter, "1");
         //paymentDetails.put(MOLPayActivity.mp_custom_css_url, "file:///android_asset/custom.css");
         //paymentDetails.put(MOLPayActivity.mp_preferred_token, "");
+        //paymentDetails.put(MOLPayActivity.mp_tcctype, ""); // SALS // AUTH
 
         Intent intent = new Intent(MainActivity.this, MOLPayActivity.class);
         intent.putExtra(MOLPayActivity.MOLPayPaymentDetails, paymentDetails);
