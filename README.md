@@ -111,6 +111,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
     
         // Optional, credit card transaction type, set "AUTH" to authorize the transaction
         paymentDetails.put(MOLPayActivity.mp_tcctype, "");
+    
+        // Optional, set true to process this transaction through the recurring api, please refer the MOLPay Recurring API pdf 
+        paymentDetails.put(MOLPayActivity.mp_is_recurring, false);
 
 ## Start the payment module
 
