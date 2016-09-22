@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
         //paymentDetails.put(MOLPayActivity.mp_preferred_token, "");
         //paymentDetails.put(MOLPayActivity.mp_tcctype, ""); // SALS // AUTH
         //paymentDetails.put(MOLPayActivity.mp_is_recurring, false);
+        //String allowedchannels[] = {"credit","credit3"};
+        //paymentDetails.put(MOLPayActivity.mp_allowed_channels, allowedchannels);
+        //paymentDetails.put(MOLPayActivity.mp_sandbox_mode, true);
 
         Intent intent = new Intent(MainActivity.this, MOLPayActivity.class);
         intent.putExtra(MOLPayActivity.MOLPayPaymentDetails, paymentDetails);
