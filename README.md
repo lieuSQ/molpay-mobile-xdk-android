@@ -121,6 +121,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
     
         // Optional for sandboxed development environment, set boolean value to enable.
         paymentDetails.put(MOLPayActivity.mp_sandbox_mode, true);
+    
+        // Optional, required a valid mp_channel value, this will skip the payment info page and go direct to the payment screen.
+        paymentDetails.put(MOLPayActivity.mp_express_mode, true);
 
 ## Start the payment module
 

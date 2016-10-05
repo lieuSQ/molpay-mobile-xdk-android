@@ -69,27 +69,12 @@ public class MainActivity extends AppCompatActivity {
         //String allowedchannels[] = {"credit","credit3"};
         //paymentDetails.put(MOLPayActivity.mp_allowed_channels, allowedchannels);
         //paymentDetails.put(MOLPayActivity.mp_sandbox_mode, true);
+        //paymentDetails.put(MOLPayActivity.mp_express_mode, true);
 
         Intent intent = new Intent(MainActivity.this, MOLPayActivity.class);
         intent.putExtra(MOLPayActivity.MOLPayPaymentDetails, paymentDetails);
         startActivityForResult(intent, MOLPayActivity.MOLPayXDK);
-
-
-
-        // transactionRequest example
-//        MOLPayService mpservice = new MOLPayService();
-//        mpservice.transactionRequest(paymentDetails, new MOLPayService.Callback() {
-//            @Override
-//            public void onTransactionRequestCompleted(String result) {
-//                Log.d(MOLPayActivity.MOLPAY, "onTransactionRequestCompleted result= " + result);
-//            }
-//
-//            @Override
-//            public void onTransactionRequestFailed(String error) {
-//                Log.d(MOLPayActivity.MOLPAY, "onTransactionRequestCompleted result= " + error);
-//            }
-//        });
-
+        
     }
 
     @Override
