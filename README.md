@@ -106,6 +106,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
         paymentDetails.put(MOLPayActivity.mp_transaction_id, ""); // Optional, provide a valid cash channel transaction id here will display a payment instruction screen.
         paymentDetails.put(MOLPayActivity.mp_request_type, "");
     
+        // Optional, use this to customize the UI theme for the payment info screen, the original XDK custom.css file is provided at Example project source for reference and implementation.
+        paymentDetails.put(MOLPayActivity.mp_custom_css_url, "file:///android_asset/custom.css");
+    
         // Optional, set the token id to nominate a preferred token as the default selection, set "new" to allow new card only
         paymentDetails.put(MOLPayActivity.mp_preferred_token, "");
     
