@@ -129,6 +129,12 @@ This is the complete and functional MOLPay Android payment module that is ready 
     
         // Optional, required a valid mp_channel value, this will skip the payment info page and go direct to the payment screen.
         paymentDetails.put(MOLPayActivity.mp_express_mode, true);
+    
+        // Optional, enable this for extended email format validation based on W3C standards.
+        paymentDetails.put(MOLPayActivity.mp_advanced_email_validation_enabled, true);
+    
+        // Optional, enable this for extended phone format validation based on Google i18n standards.
+        paymentDetails.put(MOLPayActivity.mp_advanced_phone_validation_enabled, true);
 
 ## Start the payment module
 
