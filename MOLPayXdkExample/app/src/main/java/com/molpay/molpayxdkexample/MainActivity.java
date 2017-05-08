@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
         //paymentDetails.put(MOLPayActivity.mp_bill_email_edit_disabled, true);
         //paymentDetails.put(MOLPayActivity.mp_bill_mobile_edit_disabled, true);
         //paymentDetails.put(MOLPayActivity.mp_bill_description_edit_disabled, true);
+        //paymentDetails.put(MOLPayActivity.mp_language, "EN");
+        //paymentDetails.put(MOLPayActivity.mp_dev_mode, false);
 
         Intent intent = new Intent(MainActivity.this, MOLPayActivity.class);
         intent.putExtra(MOLPayActivity.MOLPayPaymentDetails, paymentDetails);

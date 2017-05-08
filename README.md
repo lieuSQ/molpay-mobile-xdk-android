@@ -105,7 +105,9 @@ This is the complete and functional MOLPay Android payment module that is ready 
         paymentDetails.put(MOLPayActivity.mp_bin_lock_err_msg, "Only UOB allowed");
     
         // For transaction request use only, do not use this on payment process
-        paymentDetails.put(MOLPayActivity.mp_transaction_id, ""); // Optional, provide a valid cash channel transaction id here will display a payment instruction screen.
+        paymentDetails.put(MOLPayActivity.mp_transaction_id, ""); 
+    
+        // Optional, provide a valid cash channel transaction id here will display a payment instruction screen.
         paymentDetails.put(MOLPayActivity.mp_request_type, "");
     
         // Optional, use this to customize the UI theme for the payment info screen, the original XDK custom.css file is provided at Example project source for reference and implementation.
@@ -147,6 +149,14 @@ This is the complete and functional MOLPay Android payment module that is ready 
     
         // Optional, explicitly force disable billing description edit.
         paymentDetails.put(MOLPayActivity.mp_bill_description_edit_disabled, true);
+    
+        // Optional, EN, MS, VI, TH, FIL, MY, KM, ID, ZH.
+        paymentDetails.put(MOLPayActivity.mp_language, "EN");
+    
+        // Optional, enable for online sandbox testing.
+        paymentDetails.put(MOLPayActivity.mp_dev_mode, false);
+
+
 
 ## Start the payment module
 
