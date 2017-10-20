@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         paymentDetails.put(MOLPayActivity.mp_bill_name, "");
         paymentDetails.put(MOLPayActivity.mp_bill_email, "");
         paymentDetails.put(MOLPayActivity.mp_bill_mobile, "");
+        
         //paymentDetails.put(MOLPayActivity.mp_channel_editing, false);
         //paymentDetails.put(MOLPayActivity.mp_editing_enabled, false);
         //paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
