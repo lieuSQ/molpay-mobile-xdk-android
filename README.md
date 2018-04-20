@@ -84,7 +84,7 @@ This is the complete and functional MOLPay Android payment module that is ready 
         paymentDetails.put(MOLPayActivity.mp_country, "MY");
         
         // Optional String.
-        paymentDetails.put(MOLPayActivity.mp_channel, "multi"); // Use 'multi' for all available channels option. For individual channel seletion, please refer to "Channel Parameter" in "Channel Lists" in the MOLPay API Spec for Merchant pdf. 
+        paymentDetails.put(MOLPayActivity.mp_channel, "multi"); // Use 'multi' for all available channels option. For individual channel seletion, please refer to https://github.com/MOLPay/molpay-mobile-xdk-examples/blob/master/channel_list.tsv. 
         paymentDetails.put(MOLPayActivity.mp_bill_description, "billdesc");
         paymentDetails.put(MOLPayActivity.mp_bill_name, "billname");
         paymentDetails.put(MOLPayActivity.mp_bill_email, "email@domain.com");
